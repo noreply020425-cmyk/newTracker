@@ -73,4 +73,14 @@ jobs:
           app-name: 'mytrackerapp'
           slot-name: 'Production'
           package: .
-          
+
+          - name: Set up Node
+  uses: actions/setup-node@v4
+  with:
+    node-version: 18
+
+- name: Install
+  run: npm ci
+
+- name: Build
+  run: npm run build
